@@ -15,10 +15,9 @@ app.get('/', (req, res) => {
 
 
 app.post('/getmovie', (req, res) => {
-    const movieToSearch = req.body.result.parameters.movie
-    /*req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.movie
+    const movieToSearch = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.movie
         ? req.body.result.parameters.movie
-        : ''*/
+        : ''
 
     const reqUrl = encodeURI(
         `http://www.omdbapi.com/?t=${movieToSearch}&apikey=trilogy`
