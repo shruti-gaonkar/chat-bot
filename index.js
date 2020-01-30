@@ -1,4 +1,5 @@
 const express = require('express')
+var path = require("path");
 // will use this later to send requests
 const http = require('http')
 
@@ -9,7 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    res.status(200).send('Server is working.')
+    res.sendFile(path.join(__dirname, "index.html"));
 })
 
 
